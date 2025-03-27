@@ -1,0 +1,217 @@
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffff;
+  color: #1E5A74;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //width: 900px;
+  //height: 180px;
+  //background-image: url('./img/logo_background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.3;
+  font-family: 'Lato', sans-serif;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 0.5rem;
+  line-height: 1.3;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Featured Section */
+.featured-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 6rem 1rem;
+  background: linear-gradient(to right, #3A8684, #1E5A74);
+  border-radius: 8px;
+}
+
+.featured-image {
+  background-image: url('./img/publi_1.jpg');
+  width: 100%;
+  height: 900px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  margin: 0 auto;
+}
+
+.doctor-info {
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: #ffff;
+  }
+
+  p {
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    color: #ffff;
+  }
+}
+
+/* Schedule */
+.schedule {
+  background: #fff;
+  padding: 2rem 1rem;
+  width: 900px;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.schedule-content {
+  display: flex; /* Habilita Flexbox */
+  align-items: center; /* Centra verticalmente la imagen y el texto */
+  justify-content: space-between; /* Alinea imagen a la izquierda y texto a la derecha */
+  gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.schedule-image {
+  flex: 15; /* Ocupa menos espacio que el texto */
+  background-image: url('./img/consulta_1.jpg');
+  background-size: contain; /* Ajusta la imagen al contenedor */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 700px; /* Asegura un ancho completo dentro del contenedor */
+  height: 500px; /* Altura fija para la imagen */
+}
+
+.schedule-text {
+  flex: 5; /* Ocupa más espacio que la imagen */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.schedule h3 {
+  margin-bottom: 1.5rem;
+  font-family: 'Lato', sans-serif;
+  color: #1E5A74;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.schedule p {
+  margin-bottom: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  color: #1E5A74;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #3A8684, #1E5A74);
+  color: #ffff;
+  border-radius: 8px;
+
+  .contact-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 2rem;
+    font-style: normal;
+  }
+
+  .contact-info {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Contact Form */
+.contact-form {
+  background: #fff;
+  padding: 2rem;
+  margin-top: 2rem;
+
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    mat-form-field {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+
+  .message-box {
+    width: 100%;
+
+    textarea {
+      min-height: 150px;
+    }
+  }
+
+  button {
+    display: block;
+    margin: 1rem auto 0;
+    padding: 0.75rem 2rem;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+  }
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(to right, #3A8684, #1E5A74);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+/* Contenedor del botón */
+.button-container {
+  margin-left: auto;
+}
+
+/* Estilo del botón */
+button.custom-button {
+  background-color: #1E5A74 !important;
+  color: white !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 16px !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+}
+
+/* Hover del botón */
+button.custom-button:hover {
+  background-color: #15485A;
+}
