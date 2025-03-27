@@ -1,0 +1,123 @@
+/* Featured Section */
+.featured-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 8rem 1rem;
+    background: linear-gradient(to right, #3A8684, #1E5A74);
+    border-radius: 8px;
+
+    h4 {
+        color: #fff;
+        font-size: 25px;
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+    }
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 1rem;
+    background: #ffff;
+    color: #1E5A74;
+    border-radius: 8px;
+
+    .contact-title {
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: 'Lato', sans-serif;
+        margin-bottom: 2rem;
+        font-style: normal;
+    }
+
+    .contact-info {
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+
+        a {
+            color: #1E5A74;
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Contact Form */
+.contact-form {
+    background: #fff;
+    padding: 2rem;
+    margin-top: 2rem;
+
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        mat-form-field {
+            flex: 1 1 calc(50% - 1rem);
+        }
+    }
+
+    .message-box {
+        width: 100%;
+
+        textarea {
+            min-height: 150px;
+        }
+    }
+
+    button {
+        display: block;
+        margin: 1rem auto 0;
+        padding: 0.75rem 2rem;
+        font-size: 18px;
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+    }
+}
+
+/* Maps */
+.featured-section iframe {
+    width: 100%; /* Ajustar al ancho completo del contenedor */
+    height: 600px; /* Cambiar la altura según lo que necesites */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto elegante */
+}
+
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, #3A8684, #1E5A74);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+/* Contenedor del botón */
+.button-container {
+    margin-left: auto;
+}
+
+/* Estilo del botón */
+button.custom-button {
+    background-color: #1E5A74 !important;
+    color: white !important;
+    font-family: 'Lato', sans-serif !important;
+    font-size: 16px !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Hover del botón */
+button.custom-button:hover {
+    background-color: #15485A;
+}
