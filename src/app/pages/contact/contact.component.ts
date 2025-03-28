@@ -11,6 +11,18 @@ export class ContactComponent {
   constructor(private router: Router) {}
 
   enviarFormulario(form: any) {
+     // Validar que todos los campos requeridos tengan valores
+  if (
+    !form.value.nombres?.trim() || 
+    !form.value.telefono?.trim() || 
+    !form.value.email?.trim() || 
+    !form.value.direccion?.trim() || 
+    !form.value.mensaje?.trim()
+  ) {
+    alert('Por favor, completa todos los campos requeridos antes de enviar el correo.');
+    return; // Detener el envío si hay campos vacíos
+  }
+
     // Define los datos del formulario
     const templateParams = {
       nombres: form.value.nombres,

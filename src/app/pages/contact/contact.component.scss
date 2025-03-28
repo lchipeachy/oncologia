@@ -48,8 +48,7 @@
 /* Contact Form */
 .contact-form {
     background: #fff;
-    padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 
     .form-group {
         display: flex;
@@ -68,15 +67,6 @@
             min-height: 150px;
         }
     }
-
-    button {
-        display: block;
-        margin: 1rem auto 0;
-        padding: 0.75rem 2rem;
-        font-size: 18px;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-    }
 }
 
 /* Maps */
@@ -86,7 +76,6 @@
     border-radius: 8px; /* Bordes redondeados opcionales */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto elegante */
 }
-
 
 /* Footer */
 .footer {

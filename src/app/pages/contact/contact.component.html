@@ -35,45 +35,62 @@
         </iframe>
     </section>
 
-    <!-- Formulario -->
-    <form class="contact-form" #contactForm="ngForm" (ngSubmit)="enviarFormulario(contactForm)">
-        <!-- Campo: Nombres -->
-        <mat-form-field appearance="fill">
-          <mat-label>Nombres</mat-label>
-          <input matInput type="text" name="nombres" ngModel required />
-        </mat-form-field>
-      
-        <!-- Campo: Teléfono -->
-        <mat-form-field appearance="fill">
-          <mat-label>Teléfono</mat-label>
-          <input matInput type="tel" name="telefono" ngModel />
-        </mat-form-field>
-      
-        <!-- Campo: Email -->
-        <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" name="email" ngModel required />
-        </mat-form-field>
-      
-        <!-- Campo: Dirección -->
-        <mat-form-field appearance="fill">
-          <mat-label>Dirección</mat-label>
-          <input matInput type="text" name="direccion" ngModel />
-        </mat-form-field>
-      
+    <div class="contact">
+      <!-- Título del formulario -->
+      <h2 class="contact-title">Si tienes alguna duda, no dudes en escribirnos. </h2>
+    
+      <!-- Formulario -->
+      <form class="contact-form" #contactForm="ngForm" (ngSubmit)="enviarFormulario(contactForm)">
+        <div class="form-group">
+          <!-- Campo: Nombres -->
+          <mat-form-field appearance="fill">
+            <mat-label>Nombres</mat-label>
+            <input matInput type="text" name="nombres" ngModel required />
+            <mat-error *ngIf="contactForm.form.controls['nombres']?.invalid && contactForm.form.controls['nombres']?.touched">
+              Este campo es obligatorio.
+            </mat-error>
+          </mat-form-field>
+        
+          <!-- Campo: Teléfono -->
+          <mat-form-field appearance="fill">
+            <mat-label>Teléfono</mat-label>
+            <input matInput type="tel" name="telefono" ngModel />
+          </mat-form-field>
+        
+          <!-- Campo: Email -->
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" name="email" ngModel required />
+            <mat-error *ngIf="contactForm.form.controls['email']?.invalid && contactForm.form.controls['email']?.touched">
+              Este campo es obligatorio.
+            </mat-error>
+          </mat-form-field>
+        
+          <!-- Campo: Dirección -->
+          <mat-form-field appearance="fill">
+            <mat-label>Dirección</mat-label>
+            <input matInput type="text" name="direccion" ngModel />
+          </mat-form-field>
+        </div>
+    
         <!-- Campo: Mensaje -->
         <mat-form-field class="message-box" appearance="fill">
           <mat-label>Mensaje</mat-label>
-          <textarea matInput rows="6" name="mensaje" ngModel></textarea>
+          <textarea matInput rows="6" name="mensaje" ngModel required></textarea>
+          <mat-error *ngIf="contactForm.form.controls['mensaje']?.invalid && contactForm.form.controls['mensaje']?.touched">
+            Este campo es obligatorio.
+          </mat-error>
         </mat-form-field>
-      
+    
         <!-- Botón de Enviar -->
         <div style="width: 100%; display: flex;">
-          <div class="button-container">
-            <button class="custom-button" type="submit">Enviar</button>
-          </div>
+            <div class="button-container">
+                <button class="custom-button">Enviar</button>
+            </div>
         </div>
       </form>
+    </div>
+    
       
 </div>
 
