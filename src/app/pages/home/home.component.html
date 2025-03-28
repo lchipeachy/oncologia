@@ -40,46 +40,68 @@
             <strong>Centro Médico Integral <br> de Cancerología (CEMIC)</strong>
             <p>Carretera Interamericana, Kilómetro 194, <br> Quetzaltenango</p>
             <br>
-            <p><strong>Email</strong> <br> <a href="mailto:anaisabelchivalan@hotmail.com">anaisabelchivalan@hotmail.com</a></p>
+            <p><strong>Email</strong> <br> <a
+                    href="mailto:anaisabelchivalan@hotmail.com">anaisabelchivalan@hotmail.com</a></p>
             <br>
             <p><strong>Emergencias </strong><br> 4260 - 0026</p>
         </address>
     </section>
 
+
     <!-- Formulario -->
-    <form class="contact-form">
+    <form class="contact-form" #contactForm="ngForm" (ngSubmit)="enviarFormulario(contactForm)">
         <div class="form-group">
+            <!-- Campo: Nombres -->
             <mat-form-field appearance="fill">
                 <mat-label>Nombres</mat-label>
-                <input matInput type="text" />
+                <input matInput type="text" name="nombres" ngModel required />
+                <mat-error
+                    *ngIf="contactForm.form.controls['nombres']?.invalid && contactForm.form.controls['nombres']?.touched">
+                    Este campo es obligatorio.
+                </mat-error>
             </mat-form-field>
+
+            <!-- Campo: Teléfono -->
             <mat-form-field appearance="fill">
                 <mat-label>Teléfono</mat-label>
-                <input matInput type="tel" />
+                <input matInput type="tel" name="telefono" ngModel />
             </mat-form-field>
-        </div>
-        <div class="form-group">
+
+            <!-- Campo: Email -->
             <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" />
+                <input matInput type="email" name="email" ngModel required />
+                <mat-error
+                    *ngIf="contactForm.form.controls['email']?.invalid && contactForm.form.controls['email']?.touched">
+                    Este campo es obligatorio.
+                </mat-error>
             </mat-form-field>
+
+            <!-- Campo: Dirección -->
             <mat-form-field appearance="fill">
                 <mat-label>Dirección</mat-label>
-                <input matInput type="text" />
+                <input matInput type="text" name="direccion" ngModel />
             </mat-form-field>
         </div>
-        <div>
-            <mat-form-field class="message-box" appearance="fill">
-                <mat-label>Mensaje</mat-label>
-                <textarea matInput rows="6"></textarea>
-            </mat-form-field>
-        </div>
+
+        <!-- Campo: Mensaje -->
+        <mat-form-field class="message-box" appearance="fill">
+            <mat-label>Mensaje</mat-label>
+            <textarea matInput rows="6" name="mensaje" ngModel required></textarea>
+            <mat-error
+                *ngIf="contactForm.form.controls['mensaje']?.invalid && contactForm.form.controls['mensaje']?.touched">
+                Este campo es obligatorio.
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Botón de Enviar -->
         <div style="width: 100%; display: flex;">
             <div class="button-container">
                 <button class="custom-button">Enviar</button>
             </div>
         </div>
     </form>
+
 </div>
 
 <!-- Footer -->
