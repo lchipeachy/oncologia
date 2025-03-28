@@ -5,23 +5,25 @@ import emailjs from '@emailjs/browser'; // Importar emailjs
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   constructor(private router: Router) {}
 
   enviarFormulario(form: any) {
-     // Validar que todos los campos requeridos tengan valores
-  if (
-    !form.value.nombres?.trim() || 
-    !form.value.telefono?.trim() || 
-    !form.value.email?.trim() || 
-    !form.value.direccion?.trim() || 
-    !form.value.mensaje?.trim()
-  ) {
-    alert('Por favor, completa todos los campos requeridos antes de enviar el correo.');
-    return; // Detener el envío si hay campos vacíos
-  }
+    // Validar que todos los campos requeridos tengan valores
+    if (
+      !form.value.nombres?.trim() ||
+      !form.value.telefono?.trim() ||
+      !form.value.email?.trim() ||
+      !form.value.direccion?.trim() ||
+      !form.value.mensaje?.trim()
+    ) {
+      alert(
+        'Por favor, completa todos los campos requeridos antes de enviar el correo.'
+      );
+      return; // Detener el envío si hay campos vacíos
+    }
 
     // Define los datos del formulario
     const templateParams = {
@@ -34,28 +36,31 @@ export class ContactComponent {
 
     // Enviar correo con EmailJS
     emailjs
-  .send(
-    'service_s8fcqjj', // Reemplaza con tu Service ID
-    'template_tmyulpr', // Reemplaza con tu Template ID
-    templateParams,
-    'CMWTH4Y0D5vdGksWw' // Reemplaza con tu Public Key
-  )
-  .then(
-    (response) => {
-      console.log('Correo enviado con éxito:', response.status, response.text);
-      alert('Correo enviado correctamente.');
-      this.onSubmit(); // Redirige a Home después de enviar el correo
-    },
-    (error) => {
-      console.error('Error al enviar el correo:', error);
-      alert('Hubo un error al enviar el correo. Inténtalo nuevamente.');
-    }
-  );
-
+      .send(
+        'service_s8fcqjj', // Reemplaza con tu Service ID
+        'template_tmyulpr', // Reemplaza con tu Template ID
+        templateParams,
+        'CMWTH4Y0D5vdGksWw' // Reemplaza con tu Public Key
+      )
+      .then(
+        (response) => {
+          console.log(
+            'Correo enviado con éxito:',
+            response.status,
+            response.text
+          );
+          alert('Correo enviado correctamente.');
+          this.onSubmit(); // Redirige a Home después de enviar el correo
+        },
+        (error) => {
+          console.error('Error al enviar el correo:', error);
+          alert('Hubo un error al enviar el correo. Inténtalo nuevamente.');
+        }
+      );
   }
 
   // Método para redirigir a la página de inicio
   onSubmit() {
-    this.router.navigate(['/home']);  // Redirige a Home
+    this.router.navigate(['/home']); // Redirige a Home
   }
 }
