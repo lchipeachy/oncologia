@@ -36,39 +36,45 @@
     </section>
 
     <!-- Formulario -->
-    <form class="contact-form">
-        <div class="form-group">
-            <mat-form-field appearance="fill">
-                <mat-label>Nombres</mat-label>
-                <input matInput type="text" />
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Teléfono</mat-label>
-                <input matInput type="tel" />
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <mat-form-field appearance="fill">
-                <mat-label>Email</mat-label>
-                <input matInput type="email" />
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Dirección</mat-label>
-                <input matInput type="text" />
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field class="message-box" appearance="fill">
-                <mat-label>Mensaje</mat-label>
-                <textarea matInput rows="6"></textarea>
-            </mat-form-field>
-        </div>
+    <form class="contact-form" #contactForm="ngForm" (ngSubmit)="enviarFormulario(contactForm)">
+        <!-- Campo: Nombres -->
+        <mat-form-field appearance="fill">
+          <mat-label>Nombres</mat-label>
+          <input matInput type="text" name="nombres" ngModel required />
+        </mat-form-field>
+      
+        <!-- Campo: Teléfono -->
+        <mat-form-field appearance="fill">
+          <mat-label>Teléfono</mat-label>
+          <input matInput type="tel" name="telefono" ngModel />
+        </mat-form-field>
+      
+        <!-- Campo: Email -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" name="email" ngModel required />
+        </mat-form-field>
+      
+        <!-- Campo: Dirección -->
+        <mat-form-field appearance="fill">
+          <mat-label>Dirección</mat-label>
+          <input matInput type="text" name="direccion" ngModel />
+        </mat-form-field>
+      
+        <!-- Campo: Mensaje -->
+        <mat-form-field class="message-box" appearance="fill">
+          <mat-label>Mensaje</mat-label>
+          <textarea matInput rows="6" name="mensaje" ngModel></textarea>
+        </mat-form-field>
+      
+        <!-- Botón de Enviar -->
         <div style="width: 100%; display: flex;">
-            <div class="button-container">
-                <button class="custom-button">Enviar</button>
-            </div>
+          <div class="button-container">
+            <button class="custom-button" type="submit">Enviar</button>
+          </div>
         </div>
-    </form>
+      </form>
+      
 </div>
 
 <!-- Footer -->
