@@ -1,0 +1,90 @@
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #ffff;
+
+    .about-container {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+        align-items: center;
+        gap: 40px;
+
+        .about-image {
+            flex: 1;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;  // Mantener el fondo cubriendo el contenedor
+            height: 800px;  // Aseguro una altura fija
+            width: 100%;  // Aseguro que ocupe todo el ancho disponible
+            border-radius: 8px;
+        }
+
+        .about-content {
+            flex: 1;
+            text-align: left;
+
+            h2 {
+                font-size: 25px;
+                color: #1E5A74;
+                margin-bottom: 10px;
+                font-family: 'Lato', sans-serif;
+                font-weight: bold;
+                font-style: normal;
+            }
+
+            p {
+                font-size: 18px;
+                font-family: 'Lato', sans-serif;
+                font-style: normal;
+                color: #3A8684;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .cta-button {
+                background: #1E5A74;
+                color: #ffff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+
+                &:hover {
+                    background: #3A8684;
+                }
+            }
+        }
+    }
+
+    // Estilo específico para la imagen de cada sección
+    &.about-1 .about-image {
+        background-image: url('./img/us_1.jpg');
+    }
+
+    &.about-2 .about-image {
+        background-image: url('./img/us_2.jpg');
+        background-size: 150% 100%;  // Estiramos el ancho de la imagen al 150%
+        background-position: center;  // Ajustamos la posición para centrarla
+    }
+
+    &.about-3 .about-image {
+        background-image: url('./img/us_3.jpg');
+    }
+
+    @media (max-width: 768px) {
+        .about-container {
+            flex-direction: column;
+            text-align: center;
+
+            .about-image {
+                width: 100%;
+                height: auto;  // Aseguro que la altura se ajuste automáticamente
+                max-height: 300px;  // Limito la altura en pantallas pequeñas
+            }
+        }
+    }
+}
