@@ -16,7 +16,7 @@ export class ServicesComponent {
     { icon: 'healing', title: 'Cáncer gastrointestinal' },
     { icon: 'healing', title: 'Cáncer de Piel', description: 'Melanoma' },
     { icon: 'healing', title: 'Sarcoma de Tejidos Blandos' },
-    { icon: 'healing', title: 'Tumores de Vías Urinarias', description: 'Riñón' },
+    { icon: 'healing', title: 'Tumores de Vías Urinarias'},
     { icon: 'healing', title: 'Tumores Ginecológicos', description: 'Ovario, útero' },
   ];
 }
