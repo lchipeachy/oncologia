@@ -1,0 +1,83 @@
+.services {
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('./img/services_1.jpg') no-repeat center center;
+    background-size: 100% auto;
+    padding-top: 150px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+    margin-top: -550px;
+}
+
+.service-card {
+    width: 320px;
+    padding: 20px;
+    background-color: #ffff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+}
+
+mat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+mat-card-title {
+    font-size: 20px; 
+    font-weight: bold;
+    color: #1E5A74; 
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+mat-card-content {
+    font-size: 18px;
+    color: #3A8684; 
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    text-align: center; 
+}
+
+mat-icon {
+    font-size: 22px; 
+    color: #1E5A74;
+} 
+
+.services::before, .services::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    transform: translateY(-50%);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, #3A8684, #1E5A74);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
