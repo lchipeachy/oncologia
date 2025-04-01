@@ -1,94 +1,123 @@
+.about-wrapper {
+    position: relative;
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url('./img/services_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center top;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        filter: blur(10px);
+        z-index: 0;
+    }
+}
+
 .about {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
-    background-color: #ffff;
+    margin-bottom: 50px;
+    z-index: 1;
 
     .about-container {
-        display: flex;
-        max-width: 1200px;
+        position: relative;
         width: 100%;
+        display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 70px;
+        padding: 20px;
+        background: rgba(30, 90, 116, 0.7);
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        z-index: 2;
 
-        .about-image {
-            flex: 1;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;  // Mantener el fondo cubriendo el contenedor
-            height: 800px;  // Aseguro una altura fija
-            width: 100%;  // Aseguro que ocupe todo el ancho disponible
-            border-radius: 8px;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+        }
+    }
+
+    .about-image {
+        flex: 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        width: 600px;
+        height: 600px;
+        margin: 0 auto;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+        }
+    }
+
+    .about-content {
+        flex: 1;
+        text-align: left;
+
+        h2 {
+            font-size: 35px;
+            color: #A3C4D6;
+            margin-bottom: 10px;
+            font-family: fantasy;
         }
 
-        .about-content {
-            flex: 1;
-            text-align: left;
+        p {
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 520;
+            color: #E1E1E1;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-            h2 {
-                font-size: 25px;
-                color: #1E5A74;
-                margin-bottom: 10px;
-                font-family: 'Lato', sans-serif;
-                font-weight: bold;
-                font-style: normal;
-            }
+        .cta-button {
+            background: #1E5A74;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
 
-            p {
-                font-size: 18px;
-                font-family: 'Lato', sans-serif;
-                font-style: normal;
-                color: #3A8684;
-                line-height: 1.6;
-                margin-bottom: 15px;
-            }
-
-            .cta-button {
-                background: #1E5A74;
-                color: #ffff;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background 0.3s ease;
-
-                &:hover {
-                    background: #3A8684;
-                }
+            &:hover {
+                background: #3A8684;
             }
         }
     }
 
-    // Estilo específico para la imagen de cada sección
+    // Fondos específicos para cada sección
     &.about-1 .about-image {
         background-image: url('./img/us_1.jpg');
     }
 
     &.about-2 .about-image {
         background-image: url('./img/us_2.jpg');
-        background-size: 150% 100%;  // Estiramos el ancho de la imagen al 150%
-        background-position: center;  // Ajustamos la posición para centrarla
     }
 
     &.about-3 .about-image {
         background-image: url('./img/us_3.jpg');
     }
-
-    @media (max-width: 768px) {
-        .about-container {
-            flex-direction: column;
-            text-align: center;
-
-            .about-image {
-                width: 100%;
-                height: auto;  // Aseguro que la altura se ajuste automáticamente
-                max-height: 300px;  // Limito la altura en pantallas pequeñas
-            }
-        }
-    }
 }
-
 
 /* Footer */
 .footer {
