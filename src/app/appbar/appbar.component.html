@@ -1,12 +1,34 @@
 <mat-toolbar color="primary" class="custom-toolbar">
-    <div class="logo-container">
+    <!-- Contenedor de logo y título -->
+    <div class="logo-title-container">
+        <div class="logo-container"></div>
         <span class="title">Dra. Ana Isabel<br>Chivalán</span>
     </div>
+
     <span class="spacer"></span>
+
+    <!-- Navegación principal (visible en desktop) -->
     <nav class="nav-links">
-        <a mat-button routerLink="/inicio">Inicio</a>
-        <a mat-button routerLink="/nosotros">Nosotros</a>
-        <a mat-button routerLink="/servicios">Servicios</a>
-        <a mat-button routerLink="/contacto" class="contact-link">Contáctanos</a>
+        <a mat-button routerLink="/inicio" routerLinkActive="active-link">Inicio</a>
+        <a mat-button routerLink="/nosotros" routerLinkActive="active-link">Nosotros</a>
+        <a mat-button routerLink="/servicios" routerLinkActive="active-link">Servicios</a>
+        <a mat-button routerLink="/contacto" routerLinkActive="active-link">Contáctanos</a>
     </nav>
+
+    <!-- Botón de menú móvil -->
+    <button mat-icon-button class="mobile-menu-button" (click)="toggleMobileMenu()" aria-label="Menú de navegación">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Menú móvil -->
+    <div class="mobile-menu-container" [class.open]="mobileMenuOpen">
+        <nav class="nav-links-mobile">
+            <a mat-button routerLink="/inicio" (click)="closeMobileMenu()" routerLinkActive="active-link">Inicio</a>
+            <a mat-button routerLink="/nosotros" (click)="closeMobileMenu()" routerLinkActive="active-link">Nosotros</a>
+            <a mat-button routerLink="/servicios" (click)="closeMobileMenu()"
+                routerLinkActive="active-link">Servicios</a>
+            <a mat-button routerLink="/contacto" (click)="closeMobileMenu()"
+                routerLinkActive="active-link">Contáctanos</a>
+        </nav>
+    </div>
 </mat-toolbar>
