@@ -1,16 +1,16 @@
 .about-wrapper {
     position: relative;
     min-height: 100vh;
-    padding: 40px;
+    padding: 20px;  /* Ajuste de padding para pantallas más pequeñas */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background: url('./img/services_1.jpg') no-repeat center center fixed;
+    background: url('./img/services_1.jpg') no-repeat center center;
     background-size: cover;
-    background-attachment: scroll;
     background-position: center top;
+    background-attachment: scroll; /* Cambio para compatibilidad en móviles */
 
     &::before {
         content: "";
@@ -27,13 +27,17 @@
 
 .about {
     position: relative;
-    width: 100%;
-    max-width: 1000px;
+    width: 100%; /* Cambiado a 100% para un mejor ajuste en dispositivos pequeños */
+    max-width: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
     z-index: 1;
+
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+    }
 
     .about-container {
         display: flex;
@@ -49,6 +53,13 @@
         @media (max-width: 768px) {
             flex-direction: column;
             text-align: center;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        @media (max-width: 480px) {
+            padding: 12px;
+            backdrop-filter: blur(3px); /* Menos blur para mejor rendimiento */
         }
     }
 
@@ -60,6 +71,21 @@
         background-repeat: no-repeat;
         background-size: cover;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 992px) {
+            width: 250px;
+            height: 250px;
+        }
+
+        @media (max-width: 768px) {
+            width: 200px;
+            height: 200px;
+        }
+
+        @media (max-width: 480px) {
+            width: 150px;
+            height: 150px;
+        }
     }
 
     .about-content {
@@ -71,6 +97,18 @@
             color: #A3C4D6;
             margin-bottom: 10px;
             font-family: fantasy;
+
+            @media (max-width: 992px) {
+                font-size: 22px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 18px;
+            }
         }
 
         p {
@@ -80,6 +118,20 @@
             color: #E1E1E1;
             line-height: 1.6;
             margin-bottom: 15px;
+
+            @media (max-width: 992px) {
+                font-size: 19px;
+                line-height: 1.5;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 17px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 15px;
+                line-height: 1.4;
+            }
         }
     }
 
@@ -106,4 +158,14 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 520;
     color: #E1E1E1;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        padding: 0.8rem 0;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+        padding: 0.6rem 0;
+    }
 }
