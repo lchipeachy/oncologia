@@ -1,4 +1,140 @@
-/* Featured Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url('./img/services_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center top;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        filter: blur(10px);
+        z-index: 0;
+    }
+}
+
+/* Card Genérico */
+.card {
+    background: rgba(30, 90, 116, 0.7);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+.contact {
+    color: #A3C4D6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+.contact-info {
+    font-size: 18px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .contact-label {
+        color: #A3C4D6;
+        font-size: 25px;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-family: fantasy;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contact-text {
+        color: #E1E1E1;
+        line-height: 1.5;
+        font-size: 23px;
+        width: 100%;
+        text-align: center;
+    }
+
+    a {
+        color: #E1E1E1;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: #A3C4D6;
+        }
+    }
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 25px;
+    font-family: fantasy;
+    margin-bottom: 1.6rem;
+    color: #A3C4D6;
+}
+
+/* Map Section */
+.map-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    .map-title {
+        font-size: 25px;
+        font-family: fantasy;
+        color: #A3C4D6;
+        margin-bottom: 1rem;
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+        border-radius: 8px;
+        flex-grow: 1;
+        
+        @media (min-width: 768px) {
+            height: 400px;
+        }
+    }
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form {
+    margin-top: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        mat-form-field {
+            flex: 1 1 100%;/* Featured Section */
 .featured-section {
     display: flex;
     flex-direction: column;
@@ -109,4 +245,204 @@ button.custom-button {
 /* Hover del botón */
 button.custom-button:hover {
     background-color: #15485A;
+}
+            
+            @media (min-width: 768px) {
+                flex: 1 1 calc(50% - 1rem);
+            }
+        }
+    }
+
+    .message-box {
+        width: 100%;
+        flex-grow: 1;
+
+        textarea {
+            min-height: 150px;
+        }
+
+        .full-width {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1rem;
+        padding-right: 8px;
+    }
+}
+
+/* Estilo del botón */
+button.custom-button {
+    background-color: #1E5A74 !important;
+    color: white !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 520;
+    font-size: 16px !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+}
+
+button.custom-button:hover {
+    background-color: #15485A;
+}
+
+/* Contenedor principal */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "card1 card2"
+            "card3 card4";
+    }
+}
+
+/* Asegurar igual altura en cada fila */
+@media (min-width: 768px) {
+    .main-content {
+        grid-auto-rows: 1fr;
+        
+        & > .card {
+            min-height: 0;
+        }
+    }
+}
+
+/* Estilos adicionales para el formulario mejorado */
+.contact-subtitle {
+    color: #E1E1E1;
+    font-size: 16px;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .elegant-form {
+    width: 100%;
+  }
+  
+  .elegant-input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .elegant-input .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+  
+  .elegant-input .mat-form-field-outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .elegant-input .mat-form-field-outline-start,
+  .elegant-input .mat-form-field-outline-gap,
+  .elegant-input .mat-form-field-outline-end {
+    border-width: 1px;
+    border-color: rgba(163, 196, 214, 0.5) !important;
+  }
+  
+  .elegant-input .mat-form-field-label {
+    color: #A3C4D6 !important;
+  }
+  
+  .elegant-input .mat-input-element {
+    color: #E1E1E1 !important;
+    caret-color: #A3C4D6 !important;
+  }
+  
+  .elegant-input .mat-icon {
+    color: #A3C4D6;
+    margin-right: 8px;
+  }
+  
+  .elegant-textarea .mat-form-field-outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .elegant-textarea .mat-form-field-outline-start,
+  .elegant-textarea .mat-form-field-outline-gap,
+  .elegant-textarea .mat-form-field-outline-end {
+    border-width: 1px;
+    border-color: rgba(163, 196, 214, 0.5) !important;
+  }
+  
+  .elegant-textarea .mat-form-field-label {
+    color: #A3C4D6 !important;
+  }
+  
+  .elegant-textarea .mat-input-element {
+    color: #E1E1E1 !important;
+    caret-color: #A3C4D6 !important;
+  }
+  
+  .elegant-button {
+    background: linear-gradient(135deg, #1E5A74 0%, #3A8684 100%) !important;
+    color: white !important;
+    padding: 12px 30px !important;
+    border-radius: 30px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .elegant-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .elegant-button:active {
+    transform: translateY(0) !important;
+  }
+  
+  .elegant-button .mat-icon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  
+  /* Animación para los campos del formulario */
+  .mat-form-field {
+    transition: all 0.3s ease;
+  }
+  
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color: #A3C4D6 !important;
+  }
+  
+  .mat-form-field.mat-focused .mat-form-field-outline-thick {
+    color: #A3C4D6 !important;
+  }
+  
+  /* Efecto hover para los campos */
+  .mat-form-field:hover .mat-form-field-outline {
+    border-color: #A3C4D6 !important;
+  }
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, #3A8684, #1E5A74);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 520;
+    color: #E1E1E1;
 }

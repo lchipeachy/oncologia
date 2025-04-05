@@ -1,100 +1,117 @@
-<div class="main-content">
-    <!-- Sección de contacto -->
-    <section class="contact">
+<!-- Hero Section como fondo -->
+<section class="hero">
+  <!-- Contenido del hero si lo necesitas -->
+</section>
+
+<!-- Contenido principal envuelto en un contenedor -->
+<div class="content-wrapper">
+  <div class="main-content">
+    <!-- Card 1: Información de contacto -->
+    <div class="card">
+      <section class="contact">
         <h3 class="contact-title">Contáctanos</h3>
-        <address class="contact-info">
-            <p><strong>Hospital La Paz</strong><br> 4a avenida 23-61, zona 3, Quetzaltenango</p>
-            <br>
-            <strong>Centro Médico Integral <br> de Cancerología (CEMIC)</strong>
-            <p>Carretera Interamericana, Kilómetro 194, <br> Quetzaltenango</p>
-            <br>
-            <p><strong>Email</strong> <br> <a href="mailto:anaisabelchivalan@hotmail.com">anaisabelchivalan@hotmail.com</a></p>
-            <br>
-            <p><strong>Emergencias </strong><br> 4260 - 0026</p>
-        </address>
-    </section>
-
-    <!-- Ubicaciones -->
-    <section class="featured-section">
-        <h4>Hospital La Paz</h4>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19224.422436050038!2d-91.53054755224822!3d14.828770128187768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e98039ebd3a93%3A0x74007a8b7bd26646!2sHospital%20La%20Paz!5e1!3m2!1ses-419!2sgt!4v1743112461675!5m2!1ses-419!2sgt" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-        <br><br><br><br><br><br><br>
-        <h4>Centro Médico Integral de Cancerología (CEMIC)</h4>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77058.35992610331!2d-91.56144742473238!3d14.828869951325725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858ea392b6dc26dd%3A0x15ad0fb443ed102!2sCEMIC%20Quetzaltenango!5e1!3m2!1ses-419!2sgt!4v1743112610553!5m2!1ses-419!2sgt"
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </section>
-
-    <div class="contact">
-      <!-- Título del formulario -->
-      <h2 class="contact-title">Si tienes alguna duda, no dudes en escribirnos. </h2>
-    
-      <!-- Formulario -->
-      <form class="contact-form" #contactForm="ngForm" (ngSubmit)="enviarFormulario(contactForm)">
-        <div class="form-group">
-          <!-- Campo: Nombres -->
-          <mat-form-field appearance="fill">
-            <mat-label>Nombres</mat-label>
-            <input matInput type="text" name="nombres" ngModel required />
-            <mat-error *ngIf="contactForm.form.controls['nombres']?.invalid && contactForm.form.controls['nombres']?.touched">
-              Este campo es obligatorio.
-            </mat-error>
-          </mat-form-field>
-        
-          <!-- Campo: Teléfono -->
-          <mat-form-field appearance="fill">
-            <mat-label>Teléfono</mat-label>
-            <input matInput type="tel" name="telefono" ngModel />
-          </mat-form-field>
-        
-          <!-- Campo: Email -->
-          <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" name="email" ngModel required />
-            <mat-error *ngIf="contactForm.form.controls['email']?.invalid && contactForm.form.controls['email']?.touched">
-              Este campo es obligatorio.
-            </mat-error>
-          </mat-form-field>
-        
-          <!-- Campo: Dirección -->
-          <mat-form-field appearance="fill">
-            <mat-label>Dirección</mat-label>
-            <input matInput type="text" name="direccion" ngModel />
-          </mat-form-field>
+        <div class="contact-info">
+          <p class="contact-label">Hospital La Paz</p>
+          <p class="contact-text">4a avenida 23-61, zona 3, Quetzaltenango</p>
+          
+          <p class="contact-label">Centro Médico Integral de Cancerología (CEMIC)</p>
+          <p class="contact-text">Carretera Interamericana, Kilómetro 194, Quetzaltenango</p>
+          
+          <p class="contact-label">Email</p>
+          <p class="contact-text"><a href="mailto:anaisabelchivalan@hotmail.com">anaisabelchivalan@hotmail.com</a></p>
+          
+          <p class="contact-label">Emergencias</p>
+          <p class="contact-text">4260 - 0026</p>
         </div>
-    
-        <!-- Campo: Mensaje -->
-        <mat-form-field class="message-box" appearance="fill">
-          <mat-label>Mensaje</mat-label>
-          <textarea matInput rows="6" name="mensaje" ngModel required></textarea>
-          <mat-error *ngIf="contactForm.form.controls['mensaje']?.invalid && contactForm.form.controls['mensaje']?.touched">
-            Este campo es obligatorio.
-          </mat-error>
-        </mat-form-field>
-    
-        <!-- Botón de Enviar -->
-        <div style="width: 100%; display: flex;">
-            <div class="button-container">
-                <button class="custom-button">Enviar</button>
-            </div>
-        </div>
-      </form>
+      </section>
     </div>
+
+    <!-- Card 2: Mapa Hospital La Paz -->
+    <div class="card">
+      <section class="map-section">
+        <h4 class="map-title">Hospital La Paz</h4>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19224.422436050038!2d-91.53054755224822!3d14.828770128187768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e98039ebd3a93%3A0x74007a8b7bd26646!2sHospital%20La%20Paz!5e1!3m2!1ses-419!2sgt!4v1743112461675!5m2!1ses-419!2sgt" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </section>
+    </div>
+
+    <!-- Card 3: Mapa CEMIC -->
+    <div class="card">
+      <section class="map-section">
+        <h4 class="map-title">Centro Médico Integral de Cancerología (CEMIC)</h4>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77058.35992610331!2d-91.56144742473238!3d14.828869951325725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858ea392b6dc26dd%3A0x15ad0fb443ed102!2sCEMIC%20Quetzaltenango!5e1!3m2!1ses-419!2sgt!4v1743112610553!5m2!1ses-419!2sgt"
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </section>
+    </div>
+
+   <!-- Card 4: Formulario de contacto mejorado -->
+<div class="card">
+  <section class="contact-form-section">
+    <h3 class="contact-title">¿Tienes alguna pregunta?</h3>
     
+    <form #contactForm="ngForm" class="elegant-form">
+      <div class="form-group">
+        <!-- Campo: Nombres -->
+        <mat-form-field appearance="fill" class="elegant-input">
+          <mat-label>Nombres y Apellidos</mat-label>
+          <input matInput type="text" name="nombres" ngModel required />
+          <mat-icon matPrefix>person</mat-icon>
+          <mat-error *ngIf="contactForm.form.controls['nombres']?.invalid && contactForm.form.controls['nombres']?.touched"></mat-error>
+        </mat-form-field>
       
+        <!-- Campo: Teléfono -->
+        <mat-form-field appearance="fill" class="elegant-input">
+          <mat-label>Teléfono</mat-label>
+          <input matInput type="tel" name="telefono" ngModel required/>
+          <mat-icon matPrefix>phone</mat-icon>
+          <mat-error *ngIf="contactForm.form.controls['telefono']?.invalid && contactForm.form.controls['telefono']?.touched"></mat-error>
+        </mat-form-field>
+      
+        <!-- Campo: Email -->
+        <mat-form-field appearance="fill" class="elegant-input">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" name="email" ngModel required />
+          <mat-icon matPrefix>email</mat-icon>
+          <mat-error *ngIf="contactForm.form.controls['email']?.invalid && contactForm.form.controls['email']?.touched"></mat-error>
+        </mat-form-field>
+      
+        <!-- Campo: Dirección -->
+        <mat-form-field appearance="fill" class="elegant-input">
+          <mat-label>Dirección</mat-label>
+          <input matInput type="text" name="direccion" ngModel />
+          <mat-icon matPrefix>location_on</mat-icon>
+        </mat-form-field>
+      </div>
+  
+      <!-- Campo: Mensaje -->
+      <mat-form-field class="message-box elegant-textarea" appearance="fill">
+        <mat-label>Tu mensaje</mat-label>
+        <textarea matInput rows="5" name="mensaje" ngModel required></textarea>
+        <mat-icon matPrefix>chat</mat-icon>
+        <mat-error *ngIf="contactForm.form.controls['mensaje']?.invalid && contactForm.form.controls['mensaje']?.touched"></mat-error>
+      </mat-form-field>
+  
+      <!-- Botón de Enviar -->
+      <div style="width: 100%; display: flex;">
+        <div class="button-container">
+          <button class="custom-button" (click)="enviarFormulario(contactForm)">Enviar</button>
+        </div>
+    </div>
+    </form>
+  </section>
 </div>
 
 <!-- Footer -->
 <footer class="footer">
-    Dra. Ana Isabel Chivalán ©2025
+  Dra. Ana Isabel Chivalán ©2025
 </footer>
