@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap';
+
 html, body { 
     height: 100%; 
 }
@@ -7,3 +9,13 @@ body {
     margin: 0; 
 }
 
+/* Ajustes para móvil */
+@media (max-width: 767.98px) {
+    .card {
+      margin-bottom: 1rem;
+    }
+    
+    .hero {
+      aspect-ratio: 1; /* Cuadrado en móvil */
+    }
+  }

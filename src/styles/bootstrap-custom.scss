@@ -1,0 +1,25 @@
+// 1. Define tus breakpoints (opcional, si quieres cambiarlos)
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,  // Tablet
+  lg: 992px,  // Laptop
+  xl: 1200px, // Desktop
+  xxl: 1400px // Pantallas grandes
+);
+
+// 2. Importa Bootstrap (¡importante!)
+@import '~bootstrap/scss/bootstrap';
+
+// 3. Mixin para estilos responsivos (ejemplo práctico)
+@mixin responsive-background {
+  background-color: #f8f9fa; // Default (mobile)
+  
+  @include media-breakpoint-up(md) {
+    background-color: #e9ecef; // Tablet
+  }
+  
+  @include media-breakpoint-up(lg) {
+    background-color: #dee2e6; // Desktop
+  }
+}
