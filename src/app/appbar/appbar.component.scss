@@ -51,6 +51,7 @@
     font-weight: 520;
     color: #E1E1E1;
     white-space: normal;
+    font-style: italic;
     /* Permitir salto de línea */
 
     @media (max-width: 768px) {
@@ -88,6 +89,8 @@
     a.mat-button {
         color: #E1E1E1;
         transition: color 0.3s ease;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-style: italic;
 
         &:hover {
             color: #A3C4D6;
@@ -147,6 +150,8 @@
         padding: 0.75rem 1rem;
         border-radius: 4px;
         transition: all 0.3s ease;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+        font-style: italic;
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.1);
