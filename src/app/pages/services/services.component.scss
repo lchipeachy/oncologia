@@ -1,6 +1,6 @@
 .services {
     text-align: center;
-    padding: 40px;
+    padding: 10px;
     position: relative;
     min-height: 100vh;
     display: flex;
@@ -8,7 +8,10 @@
     justify-content: center;
     align-items: center;
     background: url('./img/services_1.jpg') no-repeat center center;
-    background-size: 100% auto;
+    //background-size: cover;
+    background-position: center top;
+    background-attachment: scroll;
+    background-size: 100% 120%;
     padding-top: 150px;
 }
 
@@ -39,20 +42,18 @@ mat-card-header {
 }
 
 mat-card-title {
-    font-size: 25px; 
+    font-size: 23px; 
     color: #A3C4D6; 
-    margin-bottom: 10px;
     font-family: fantasy;
 }
 
 mat-card-content {
-    font-size: 23px;
+    font-size: 20px;
     color: #E1E1E1;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    line-height: 1.3;
+    font-style: italic;
     font-weight: 520;
     text-align: center; 
-    margin-bottom: 15px;
 }
 
 mat-icon {

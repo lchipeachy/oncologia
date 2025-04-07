@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background: url('./img/services_1.jpg') no-repeat center center fixed;
+    background: url('./img/services_1.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: scroll;
     background-position: center top;
@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     .contact-label {
         color: #A3C4D6;
         font-size: 25px;
@@ -59,7 +59,7 @@
         width: 100%;
         text-align: center;
     }
-    
+
     .contact-text {
         color: #E1E1E1;
         line-height: 1.5;
@@ -72,7 +72,7 @@
         color: #E1E1E1;
         text-decoration: underline;
         transition: color 0.3s ease;
-        
+
         &:hover {
             color: #A3C4D6;
         }
@@ -81,7 +81,7 @@
 
 .contact-title {
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
     font-family: fantasy;
     margin-bottom: 1.6rem;
     color: #A3C4D6;
@@ -93,7 +93,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    
+
     .map-title {
         font-size: 25px;
         font-family: fantasy;
@@ -106,180 +106,19 @@
         height: 300px;
         border-radius: 8px;
         flex-grow: 1;
-        
+
         @media (min-width: 768px) {
             height: 400px;
         }
     }
 }
 
-/* Contact Form Section */
-.contact-form-section {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-form {
-    margin-top: 1rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-
-    .form-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-
-        mat-form-field {
-            flex: 1 1 100%;/* Featured Section */
-.featured-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding: 8rem 1rem;
-    background: linear-gradient(to right, #3A8684, #1E5A74);
-    border-radius: 8px;
-
-    h4 {
-        color: #fff;
-        font-size: 25px;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-    }
-}
-
-/* Contact Section */
-.contact {
-    padding: 4rem 1rem;
-    background: #ffff;
-    color: #1E5A74;
-    border-radius: 8px;
-
-    .contact-title {
-        text-align: center;
-        font-size: 25px;
-        font-weight: bold;
-        font-family: 'Lato', sans-serif;
-        margin-bottom: 2rem;
-        font-style: normal;
-    }
-
-    .contact-info {
-        text-align: center;
-        font-size: 20px;
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-
-        a {
-            color: #1E5A74;
-            text-decoration: underline;
-        }
-    }
-}
-
-/* Contact Form */
-.contact-form {
-    background: #fff;
-    margin-top: 1rem;
-
-    .form-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-
-        mat-form-field {
-            flex: 1 1 calc(50% - 1rem);
-        }
-    }
-
-    .message-box {
-        width: 100%;
-
-        textarea {
-            min-height: 150px;
-        }
-    }
-}
-
-/* Maps */
-.featured-section iframe {
-    width: 100%; /* Ajustar al ancho completo del contenedor */
-    height: 600px; /* Cambiar la altura según lo que necesites */
-    border-radius: 8px; /* Bordes redondeados opcionales */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto elegante */
-}
-
-/* Footer */
-.footer {
-    background: linear-gradient(to right, #3A8684, #1E5A74);
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-}
-
-/* Contenedor del botón */
-.button-container {
-    margin-left: auto;
-}
-
 /* Estilo del botón */
 button.custom-button {
-    background-color: #1E5A74 !important;
-    color: white !important;
-    font-family: 'Lato', sans-serif !important;
-    font-size: 16px !important;
-    padding: 12px 24px !important;
-    border-radius: 8px !important;
-    border: none !important;
-    cursor: pointer !important;
-    transition: background-color 0.3s ease !important;
-}
-
-/* Hover del botón */
-button.custom-button:hover {
-    background-color: #15485A;
-}
-            
-            @media (min-width: 768px) {
-                flex: 1 1 calc(50% - 1rem);
-            }
-        }
-    }
-
-    .message-box {
-        width: 100%;
-        flex-grow: 1;
-
-        textarea {
-            min-height: 150px;
-        }
-
-        .full-width {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    .button-container {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 1rem;
-        padding-right: 8px;
-    }
-}
-
-/* Estilo del botón */
-button.custom-button {
-    background-color: #1E5A74 !important;
-    color: white !important;
+    background-color: #E1E1E1 !important;
+    color: #1E5A74 !important;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
     font-weight: 520;
     font-size: 16px !important;
     padding: 12px 24px !important;
@@ -287,6 +126,8 @@ button.custom-button {
     border: none !important;
     cursor: pointer !important;
     transition: background-color 0.3s ease !important;
+    margin-left: auto;
+    display: block;
 }
 
 button.custom-button:hover {
@@ -302,7 +143,7 @@ button.custom-button:hover {
 
     @media (min-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 
+        grid-template-areas:
             "card1 card2"
             "card3 card4";
     }
@@ -312,128 +153,27 @@ button.custom-button:hover {
 @media (min-width: 768px) {
     .main-content {
         grid-auto-rows: 1fr;
-        
-        & > .card {
+
+        &>.card {
             min-height: 0;
         }
     }
 }
 
-/* Estilos adicionales para el formulario mejorado */
-.contact-subtitle {
-    color: #E1E1E1;
-    font-size: 16px;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .elegant-form {
-    width: 100%;
-  }
-  
-  .elegant-input {
+.elegant-input {
     width: 100%;
     margin-bottom: 1rem;
-  }
-  
-  .elegant-input .mat-form-field-wrapper {
-    padding-bottom: 0;
-  }
-  
-  .elegant-input .mat-form-field-outline {
+}
+
+.elegant-input .mat-icon {
+    color: #0c5277;
+    margin-right: 8px;
+}
+
+.elegant-textarea .mat-form-field-outline {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-  }
-  
-  .elegant-input .mat-form-field-outline-start,
-  .elegant-input .mat-form-field-outline-gap,
-  .elegant-input .mat-form-field-outline-end {
-    border-width: 1px;
-    border-color: rgba(163, 196, 214, 0.5) !important;
-  }
-  
-  .elegant-input .mat-form-field-label {
-    color: #A3C4D6 !important;
-  }
-  
-  .elegant-input .mat-input-element {
-    color: #E1E1E1 !important;
-    caret-color: #A3C4D6 !important;
-  }
-  
-  .elegant-input .mat-icon {
-    color: #A3C4D6;
-    margin-right: 8px;
-  }
-  
-  .elegant-textarea .mat-form-field-outline {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-  }
-  
-  .elegant-textarea .mat-form-field-outline-start,
-  .elegant-textarea .mat-form-field-outline-gap,
-  .elegant-textarea .mat-form-field-outline-end {
-    border-width: 1px;
-    border-color: rgba(163, 196, 214, 0.5) !important;
-  }
-  
-  .elegant-textarea .mat-form-field-label {
-    color: #A3C4D6 !important;
-  }
-  
-  .elegant-textarea .mat-input-element {
-    color: #E1E1E1 !important;
-    caret-color: #A3C4D6 !important;
-  }
-  
-  .elegant-button {
-    background: linear-gradient(135deg, #1E5A74 0%, #3A8684 100%) !important;
-    color: white !important;
-    padding: 12px 30px !important;
-    border-radius: 30px !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.5px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  
-  .elegant-button:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
-  }
-  
-  .elegant-button:active {
-    transform: translateY(0) !important;
-  }
-  
-  .elegant-button .mat-icon {
-    margin-right: 8px;
-    font-size: 20px;
-  }
-  
-  /* Animación para los campos del formulario */
-  .mat-form-field {
-    transition: all 0.3s ease;
-  }
-  
-  .mat-form-field.mat-focused .mat-form-field-label {
-    color: #A3C4D6 !important;
-  }
-  
-  .mat-form-field.mat-focused .mat-form-field-outline-thick {
-    color: #A3C4D6 !important;
-  }
-  
-  /* Efecto hover para los campos */
-  .mat-form-field:hover .mat-form-field-outline {
-    border-color: #A3C4D6 !important;
-  }
+}
 
 /* Footer */
 .footer {
@@ -445,4 +185,5 @@ button.custom-button:hover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 520;
     color: #E1E1E1;
+    clear: both;
 }

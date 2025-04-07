@@ -54,62 +54,55 @@
       </section>
     </div>
 
-   <!-- Card 4: Formulario de contacto mejorado -->
-<div class="card">
-  <section class="contact-form-section">
-    <h3 class="contact-title">¿Tienes alguna pregunta?</h3>
+    <div class="card">
+      <section class="contact-form-section">
+        <h3 class="contact-title">¿Tienes alguna pregunta?</h3>
+        
+        <form #contactForm="ngForm" class="elegant-form">
+          <div class="form-group">
+            <!-- Campo: Nombres -->
+            <mat-form-field appearance="fill" class="elegant-input">
+              <mat-label>Nombres y Apellidos</mat-label>
+              <input matInput type="text" name="nombres" ngModel required />
+              <mat-icon matPrefix>person</mat-icon>
+            </mat-form-field>
+          
+            <!-- Campo: Teléfono -->
+            <mat-form-field appearance="fill" class="elegant-input">
+              <mat-label>Teléfono</mat-label>
+              <input matInput type="tel" name="telefono" ngModel required />
+              <mat-icon matPrefix>phone</mat-icon>
+            </mat-form-field>
+          
+            <!-- Campo: Email -->
+            <mat-form-field appearance="fill" class="elegant-input">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" name="email" ngModel required />
+              <mat-icon matPrefix>email</mat-icon>
+            </mat-form-field>
+          
+            <!-- Campo: Dirección -->
+            <mat-form-field appearance="fill" class="elegant-input">
+              <mat-label>Dirección</mat-label>
+              <input matInput type="text" name="direccion" ngModel />
+              <mat-icon matPrefix>location_on</mat-icon>
+            </mat-form-field>
     
-    <form #contactForm="ngForm" class="elegant-form">
-      <div class="form-group">
-        <!-- Campo: Nombres -->
-        <mat-form-field appearance="fill" class="elegant-input">
-          <mat-label>Nombres y Apellidos</mat-label>
-          <input matInput type="text" name="nombres" ngModel required />
-          <mat-icon matPrefix>person</mat-icon>
-          <mat-error *ngIf="contactForm.form.controls['nombres']?.invalid && contactForm.form.controls['nombres']?.touched"></mat-error>
-        </mat-form-field>
+            <!-- Campo: Mensaje (ahora dentro del mismo form-group) -->
+            <mat-form-field appearance="fill" class="elegant-input full-width">
+              <mat-label>Tu mensaje</mat-label>
+              <textarea matInput rows="5" name="mensaje" ngModel required></textarea>
+              <mat-icon matPrefix>chat</mat-icon>
+            </mat-form-field>
+          </div>
       
-        <!-- Campo: Teléfono -->
-        <mat-form-field appearance="fill" class="elegant-input">
-          <mat-label>Teléfono</mat-label>
-          <input matInput type="tel" name="telefono" ngModel required maxlength="8" pattern="[0-9]{8}"/>
-          <mat-icon matPrefix>phone</mat-icon>
-          <mat-error *ngIf="contactForm.form.controls['telefono']?.invalid && contactForm.form.controls['telefono']?.touched"></mat-error>
-        </mat-form-field>
-      
-        <!-- Campo: Email -->
-        <mat-form-field appearance="fill" class="elegant-input">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" name="email" ngModel required />
-          <mat-icon matPrefix>email</mat-icon>
-          <mat-error *ngIf="contactForm.form.controls['email']?.invalid && contactForm.form.controls['email']?.touched"></mat-error>
-        </mat-form-field>
-      
-        <!-- Campo: Dirección -->
-        <mat-form-field appearance="fill" class="elegant-input">
-          <mat-label>Dirección</mat-label>
-          <input matInput type="text" name="direccion" ngModel />
-          <mat-icon matPrefix>location_on</mat-icon>
-        </mat-form-field>
-      </div>
-  
-      <!-- Campo: Mensaje -->
-      <mat-form-field class="message-box elegant-textarea" appearance="fill">
-        <mat-label>Tu mensaje</mat-label>
-        <textarea matInput rows="5" name="mensaje" ngModel required></textarea>
-        <mat-icon matPrefix>chat</mat-icon>
-        <mat-error *ngIf="contactForm.form.controls['mensaje']?.invalid && contactForm.form.controls['mensaje']?.touched"></mat-error>
-      </mat-form-field>
-  
-      <!-- Botón de Enviar -->
-      <div style="width: 100%; display: flex;">
-        <div class="button-container">
-          <button class="custom-button" (click)="enviarFormulario(contactForm)">Enviar</button>
-        </div>
+          <!-- Botón de Enviar -->
+          <div class="button-container">
+            <button class="custom-button" (click)="enviarFormulario(contactForm)">Enviar</button>
+          </div>
+        </form>
+      </section>
     </div>
-    </form>
-  </section>
-</div>
 
 <!-- Footer -->
 <footer class="footer">
