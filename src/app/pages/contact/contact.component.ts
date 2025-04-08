@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import emailjs from '@emailjs/browser'; // Importar emailjs
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -26,7 +27,12 @@ export class ContactComponent {
   enviarFormulario(contactForm: NgForm) {
     // Verificar si el formulario es inválido
     if (contactForm.invalid) {
-      alert('Por favor, completa todos los campos requeridos antes de enviar el correo.');
+      // Usar SweetAlert para mostrar el mensaje de error
+      Swal.fire({
+        text: 'Por favor, completa todos los campos requeridos antes de enviar el mensaje.',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
       return;
     }
   
@@ -48,18 +54,29 @@ export class ContactComponent {
       )
       .then(
         (response) => {
-          console.log('Correo enviado con éxito:', response.status, response.text);
-          alert('Correo enviado correctamente.');
+          console.log('Mensaje enviado con éxito:', response.status, response.text);
+          // Usar SweetAlert para mostrar el mensaje de éxito
+          Swal.fire({
+            text: 'Tu mensaje ha sido enviado correctamente.',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#3085d6',
+          });
           this.onSubmit();
         },
         (error) => {
-          console.error('Error al enviar el correo:', error);
-          alert('Hubo un error al enviar el correo. Inténtalo nuevamente.');
+          console.error('Error al enviar el mensaje:', error);
+          // Usar SweetAlert para mostrar el mensaje de error
+          Swal.fire({
+            title: 'Error al enviar el mensaje',
+            text: 'Hubo un error al enviar el mensaje. Inténtalo nuevamente.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+            confirmButtonColor: '#A3C4D6'
+          });
         }
       );
   }
-  
-  
 
   onSubmit() {
     this.router.navigate(['/home']);
