@@ -7,22 +7,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background: url('./img/services_1.jpg') no-repeat center center;
+    background:#EAF7F6;
     background-size: cover;
     background-position: center top;
     background-attachment: scroll; /* Cambio para compatibilidad en móviles */
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: inherit;
-        filter: blur(10px);
-        z-index: 0;
-    }
 }
 
 .about {
