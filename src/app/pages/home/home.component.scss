@@ -1,29 +1,40 @@
+/* Estilos base mejorados */
 .hero {
   position: relative;
-  min-height: 100vh; /* Mantener altura completa */
-  padding: 40px;
+  min-height: 100vh;
+  width: 100vw; // Aseguramos que ocupe todo el ancho
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
-  background:#EAF7F6;
+  overflow-x: hidden;
+  overflow-y: auto; // Scroll vertical habilitado
+  background: #EAF7F6;
   background-size: cover;
-  background-position: center top;
-  background-attachment: fixed; /* Añadir esto para efecto parallax */
+  background-position: center;
+  box-sizing: border-box; // Incluye padding en el ancho total
 }
+
+/* Navbar (añade esto si no lo tienes) */
+.navbar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  /* Añade tus estilos de navbar aquí */
+}
+
+/* Contenedor de cards mejorado */
 .cards-container {
-  position: absolute;
-  top: 50%; /* Cambiado de 28% a 50% para mejor centrado */
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centrado vertical y horizontal */
-  display: flex;
-  gap: 20px;
-  z-index: 1;
   width: 100%;
-  max-width: 1700px;
-  justify-content: center;
-  padding: 20px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 20px 120px; // Espacio para navbar y footer
+  margin: 0 auto;
   box-sizing: border-box;
 
   .card {
@@ -33,42 +44,42 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 100%;
-    max-width: 530px;
-    height: 600px;
+    min-height: 500px; // Altura mínima reducida para móviles
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box;
 
+    /* Estilos para las imágenes (manteniendo tus medidas originales pero responsivas) */
     .card-image {
-      width: 80%;
-      max-width: 400px;
-      aspect-ratio: 1/1;
+      width: 80vw;
+      height: 80vw;
+      max-width: 420px;
+      max-height: 420px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 50%;
-      margin-top: 100px;
-      position: absolute;
-      top: -60px;
+      margin-top: 20px;
+      position: relative;
     }
 
     h3 {
-      font-size: clamp(20px, 2vw, 25px);
+      font-size: clamp(20px, 6vw, 25px);
       color: #A3C4D6;
-      margin-top: 450px;
+      margin-top: 30px;
       font-family: fantasy;
     }
 
     p {
-      font-size: clamp(16px, 1.8vw, 23px);
+      font-size: clamp(16px, 4.5vw, 23px);
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-weight: 520;
       color: #E1E1E1;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin: 15px 0;
       font-style: italic;
     }
 
@@ -78,12 +89,7 @@
       font-weight: bold;
     }
 
-    &.card-1 .card-image,
-    &.card-2 .card-image {
-      width: 85%;
-      max-width: 420px;
-    }
-
+    /* Manteniendo tus imágenes específicas */
     &.card-1 .card-image {
       background-image: url('./img/publi_1.jpg');
     }
@@ -99,12 +105,11 @@
 
       h3 {
         margin-top: 40px;
-        font-size: clamp(20px, 2vw, 25px);
       }
 
       p {
-        font-size: clamp(16px, 1.8vw, 23px);
         line-height: 1.3;
+        margin-bottom: 10px;
       }
 
       a {
@@ -114,154 +119,98 @@
   }
 }
 
-/* Footer */
+/* Footer mejorado */
 .footer {
+  width: 100vw;
   background: linear-gradient(to right, #3A8684, #1E5A74);
   color: #fff;
   text-align: center;
-  padding: 1rem 0;
-  font-size: clamp(14px, 1.8vw, 18px);
+  padding: 1.5rem 0;
+  font-size: clamp(14px, 4vw, 18px);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 520;
   color: #E1E1E1;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
 }
 
-/* Media Queries para móviles */
-@media (max-width: 1024px) {
+/* Media Queries específicas para dispositivos pequeños */
+@media screen and (max-width: 375px) { // iPhone SE y similares
   .hero {
-    min-height: 100vh; /* Mantener altura completa */
-    padding: 20px;
-    /* No cambiar position ni overflow */
+    padding: 20px 10px;
   }
 
   .cards-container {
-    position: absolute; /* Mantener posición absoluta */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centrado completo */
-    flex-direction: row; /* Mantener dirección row si hay espacio */
-    flex-wrap: wrap; /* Permitir que las cards se envuelvan */
-    gap: 20px;
-    margin-top: 0;
-    padding: 20px;
-    
+    padding: 60px 10px 100px;
+
     .card {
-      width: calc(50% - 20px); /* Dos columnas en tablet */
-      max-width: none;
-      height: auto;
-      min-height: 500px;
-
-      .card-image {
-        position: relative;
-        width: 350px;
-        height: 350px;
-        top: auto;
-        margin-top: 0;
-      }
-
-      h3 {
-        margin-top: 40px;
-        font-size: 22px;
-      }
-
-      p {
-        font-size: 18px;
-      }
-
-      &.card-1 .card-image,
-      &.card-2 .card-image {
-        width: 360px;
-        height: 360px;
-      }
-
-      &.card-3 {
-        h3 {
-          margin-top: 20px;
-        }
-
-        p {
-          font-size: 18px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .cards-container {
-    flex-direction: column; /* Cambiar a columna solo en móviles pequeños */
-    
-    .card {
-      width: 100%; /* Una columna en móviles */
-      max-width: 500px;
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .cards-container {
-    gap: 80px;
-    
-    .card {
-      max-width: 350px;
       min-height: 450px;
-      
+      padding: 15px;
+
       .card-image {
-        width: 280px;
-        height: 280px;
+        width: 70vw;
+        height: 70vw;
+        margin-top: 10px;
       }
-      
-      &.card-1 .card-image,
-      &.card-2 .card-image {
-        width: 300px;
-        height: 300px;
-      }
-      
+
       h3 {
-        font-size: 20px;
+        margin-top: 20px;
       }
-      
-      p {
-        font-size: 16px;
+
+      &.card-3 h3 {
+        margin-top: 20px;
       }
     }
-  }
-  
-  .footer {
-    font-size: 16px;
   }
 }
 
-@media (max-width: 400px) {
+/* Media Queries para tablets y desktop */
+@media screen and (min-width: 768px) {
   .cards-container {
-    gap: 60px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     
     .card {
-      max-width: 300px;
-      min-height: 400px;
-      
+      width: calc(50% - 20px);
+      min-height: 600px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cards-container {
+    .card {
+      width: calc(33.333% - 20px);
+      min-height: 650px;
+
       .card-image {
-        width: 240px;
-        height: 240px;
+        margin-top: 40px;
       }
-      
-      &.card-1 .card-image,
-      &.card-2 .card-image {
-        width: 250px;
-        height: 250px;
-      }
-      
+
       h3 {
-        font-size: 18px;
-      }
-      
-      p {
-        font-size: 15px;
+        margin-top: 60px;
       }
     }
   }
-  
-  .footer {
-    font-size: 14px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1280px) {
+  .cards-container {
+    .card {
+      .card-image {
+        width: min(40vw, 300px); /* Toma el menor valor entre 40% del ancho o 300px */
+        height: min(40vw, 300px);
+        top: 0;
+        margin-top: 20px;
+      }
+      
+      h3 {
+        margin-top: min(30vw, 250px);
+      }
+    }
   }
 }
