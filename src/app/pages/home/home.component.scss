@@ -184,7 +184,7 @@
 @media screen and (min-width: 1024px) {
   .cards-container {
     .card {
-      width: calc(33.333% - 20px);
+      width: calc(43.333% - 10px);
       min-height: 650px;
 
       .card-image {
@@ -210,6 +210,35 @@
       
       h3 {
         margin-top: min(30vw, 250px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cards-container {
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-bottom: 40px; /* Espacio inferior */
+      
+      .card-image {
+        width: 420px; /* Ancho fijo */
+        height: 420px; /* Alto fijo */
+        max-width: none; /* Eliminamos límite máximo */
+        margin-top: 40px;
+      }
+      
+      h3, p {
+        width: 90%; /* Control de ancho de texto */
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      h3 {
+        margin-top: 40px;
       }
     }
   }
